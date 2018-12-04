@@ -1,9 +1,19 @@
 // Import and configure the Firebase SDK
 // These scripts are made available when the app is served or deployed on Firebase Hosting
 // If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup
-importScripts('/__/firebase/5.5.6/firebase-app.js');
-importScripts('/__/firebase/5.5.6/firebase-messaging.js');
-importScripts('/__/firebase/init.js');
+
+importScripts('https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/5.6.0/firebase-messaging.js');
+
+var config = {
+  apiKey: "AIzaSyBwjqHHd1GkxOclHQ0rFPT82Y9eF1byNJ0",
+  authDomain: "docuflow-dashboard.firebaseapp.com",
+  databaseURL: "https://docuflow-dashboard.firebaseio.com",
+  projectId: "docuflow-dashboard",
+  storageBucket: "docuflow-dashboard.appspot.com",
+  messagingSenderId: "642958788879"
+};
+firebase.initializeApp(config);
 
 var messaging = firebase.messaging();
 
@@ -35,16 +45,5 @@ var messaging = firebase.messaging();
 // background (Web app is closed or not in browser focus) then you should
 // implement this optional method.
 // [START background_handler]
-messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  // Customize notification here
-  var notificationTitle = 'Background Message Title';
-  var notificationOptions = {
-    body: 'Background Message body.',
-    icon: '/firebase-logo.png'
-  };
 
-  return self.registration.showNotification(notificationTitle,
-    notificationOptions);
-});
 // [END background_handler]
