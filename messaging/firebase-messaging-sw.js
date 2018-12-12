@@ -5,13 +5,15 @@
 importScripts('https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/5.6.0/firebase-messaging.js');
 
+require('dotenv').config();
+
 var config = {
-  apiKey: "AIzaSyBwjqHHd1GkxOclHQ0rFPT82Y9eF1byNJ0",
-  authDomain: "docuflow-dashboard.firebaseapp.com",
-  databaseURL: "https://docuflow-dashboard.firebaseio.com",
-  projectId: "docuflow-dashboard",
-  storageBucket: "docuflow-dashboard.appspot.com",
-  messagingSenderId: "642958788879"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  databaseURL: process.env.databaseURL,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId
 };
 firebase.initializeApp(config);
 

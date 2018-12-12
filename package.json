@@ -16,5 +16,8 @@
     "eslint": "^4.17.0",
     "eslint-plugin-promise": "^3.6.0",
     "lerna": "^2.8.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.2.0"
   }
 }
